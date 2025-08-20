@@ -1,3 +1,12 @@
+## Overview
+
+This project is a minimal multi‑agent AI script built with CrewAI. It wires up:
+- IBM watsonx via `langchain-ibm` for text generation and function-calling LLMs
+- Web search and scraping tools (Serper, DuckDuckGo, Website Scraper)
+- A "Senior AI Researcher" agent and a research `Task`, orchestrated by a `Crew`
+
+Running `agent.py` will create the LLMs, initialize the agent with tools, execute the research task, and save/print the output.
+
 ## Dependency setup (CrewAI, CrewAI Tools, LangChain IBM)
 
 ### Why you may see install/backtracking errors

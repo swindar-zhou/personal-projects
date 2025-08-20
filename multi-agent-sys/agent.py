@@ -1,6 +1,6 @@
-from crewAI import Agent, Task, Crew
-from crewAI.tools import SerperDevTool, DuckDuckGoSearchTool, ScrapeWebsiteTool
-from langchain_ibm import WatsonXLLM
+from crewai import Agent, Task, Crew
+from crewai_tools import SerperDevTool
+from langchain_ibm import WatsonxLLM
 import os
 
 os.environ["WATSONX_API_KEY"] = "your-api-key"
@@ -10,7 +10,7 @@ os.environ["SERPER_API_KEY"] = "your-api-key"
 params = {"decoding_method": "greedy", "max_tokens": 500, "temperature": 0.5}
 
 # create the llm
-llm = WatsonXLLM(
+llm = WatsonxLLM(
     model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct",
     url = "https://us-south.ml.cloud.ibm.com",
     params = params,
@@ -20,7 +20,7 @@ llm = WatsonXLLM(
 print(llm.invoke("What is the capital of France?"))
 
 # create function calling llm
-function_calling_llm = WatsonXLLM(
+function_calling_llm = WatsonxLLM(
     model_id = "ibm-mistral/merlinite-7b",
     url = "https://us-south.ml.cloud.ibm.com",
     params = params,
